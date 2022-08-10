@@ -2,24 +2,11 @@ import type {NextPage} from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import {logLinkClicked} from "../google-analytics";
 
 const Home: NextPage = () => {
     return (
         <>
-            <Head>
-                <title>{'Dancamdev\'s official links'}</title>
-                <meta name="description"
-                      content="The only place where you can find all officials Dancamdev links, social profiles and projects"/>
-
-                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-                <link rel="manifest" href="/site.webmanifest"/>
-                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
-                <meta name="msapplication-TileColor" content="#da532c"/>
-                <meta name="theme-color" content="#ffffff"/>
-            </Head>
-
             <div className='flex flex-col items-center bg-gray-900 min-h-screen h-full w-full pt-10'>
                 <div
                     className='flex overflow-hidden pt-5 justify-center align-bottom mx-auto h-36 w-36 bg-gray-800 rounded-full shadow-lg'>
@@ -40,7 +27,7 @@ const Home: NextPage = () => {
 
 const LinkItem = ({href, title, icon}: LinkItemProps) => {
     return (
-        <Link href={href}>
+        <Link href={href} onClick={() => logLinkClicked(href)}>
             <div
                 className='flex items-center duration-200 rounded-xl transform hover:scale-105 shadow-lg hover:shadow-xl h-20 w-[250px] mt-8 py-3 px-3 space-x-5 justify-between bg-white cursor-pointer'>
                 <Image className={''} src={icon} alt={title} width={'50%'} height={'50%'} objectFit={'contain'}/>
