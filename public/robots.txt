@@ -1,0 +1,5 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+Sitemap: http://linkinbio.dancamdev.com/sitemap.xml
