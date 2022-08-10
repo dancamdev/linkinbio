@@ -20,6 +20,7 @@ const Home: NextPage = () => {
                           icon={'/assets/mentorship.webp'}/>
                 <LinkItem href={'https://twitter.com/dancamdev'} title={'Follow me on Twitter!'}
                           icon={'/assets/twitter.webp'}/>
+                <LinkItem href={'https://github.com/dancamdev'} title={'Here\'s my source code!'} icon={'/assets/github.webp'}/>
             </div>
         </>
     );
